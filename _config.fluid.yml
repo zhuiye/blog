@@ -105,3 +105,56 @@ ignore:
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ""
+
+# web_analytics:  # 网页访问统计
+#   enable: false # 默认为false，启用网页统计改为true即可
+#   baidu:  # 百度统计的Key，参见 https://tongji.baidu.com/sc-web/10000033910/home/site/getjs?siteId=13751376 代码获取中 hm.js? 后边的字符串
+#   google:  # Google统计的Tracking ID，参见 https://analytics.google.com/analytics/web/
+#   tencent:  # 腾讯统计的H5 App id，参见 https://mta.qq.com/h5/manage/ctr_app_manage (开启高级功能才有cid)
+#     sid:
+#     cid:
+#   woyaola:  # 51.la站点统计ID，参见 https://www.51.la/user/site/index
+#   cnzz:  # 友盟/cnzz站点统计web_id，参见 https://web.umeng.com/main.php?c=site&a=show
+#   leancloud:  # LeanCloud 计数统计，可用于 PV UV 展示，如果 web_analytics.enable 没有开启，PV UV 展示只会查询，不会增加
+#     app_id:
+#     app_key:
+#     server_url:  # REST API 服务器地址，国际版不填
+
+footer:
+  statistics:
+    enable: true
+    source: "busuanzi" # 可选 leancloud | busuanzi  根据自己需求选择
+    pv_format: "总访问量 {} 次" # 显示的文本，{}是数字的占位符（必须包含)，下同
+    uv_format: "总访客数 {} 人"
+# banner_img: /img/bg/example.jpg   # 对应存放在 /source/img/bg/example.jpg
+
+navbar:
+  blog_title: chen heng cheng
+# 部署需要留意
+
+# url: http://xxx.com/blog
+# root: /blog/
+
+index:
+  slogan:
+    enable: true
+    text: 知识的匮乏，令人心生恐惧
+    api:
+      enable: false
+      url: "https://v1.hitokoto.cn/"
+      method: "GET"
+      headers: {}
+      keys: ["hitokoto"]
+
+code:
+  copy_btn: true
+  highlight:
+    enable: true
+    line_number: true
+    lib: "highlightjs"
+    highlightjs:
+      style: "Obsidian"
+      bg_color: true
+    prismjs:
+      style: "default"
+      preprocess: true
