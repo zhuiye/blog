@@ -4,17 +4,21 @@
 
 ## 插件
 
+- One Dark Pro （漂亮主题）
+- CSS Peek 通过 css-class 快速定位 css 代码
+- GitLens
+- Prettier - Code formatter
 - Auto Close Tag
-- Auto rename tag
+- Auto Rename Tag
+- Code Spell Checker
+- Color Highlight
 - Git Blame
-- git history
-- Path intellisense
-- code Spell Checker
-- Prettier-Code formatter
-- VS code icon
-- color hightlight
-- gitLens
-- Import Cost 计算导入的文件大小，感觉看看就好
-- React Native Tools 微软开发调试用的
-- npm Intellisense  导入npm 包时，会有选择提示.
-- CSS Peek 通过css-class 快速定位css代码
+- Git Historyv0.6.20
+- Import Cost
+- npm Intellisense
+- open in browser
+- Path Intellisense
+- px to rem & rpx & vw (cssrem)
+- vscode-icons
+- ES7+ React/Redux/React-Native snippets
+- CodeLLDB
