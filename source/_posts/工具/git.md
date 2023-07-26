@@ -1,7 +1,7 @@
 ---
 title: git
 date: 2023-05-1 17:00:46
-tags: git
+tags: tool
 ---
 
 ## git 是什么

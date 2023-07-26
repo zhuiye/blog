@@ -1,4 +1,8 @@
-# vscode 插件
+---
+title: vscode 插件
+date: 2023-05-1 17:00:46
+tags: tool
+---
 
 工欲善其事，必先利其器。今天就来说说怎么让我们的 vscode 更加方便
 
