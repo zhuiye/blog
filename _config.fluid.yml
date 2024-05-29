@@ -3,19 +3,19 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: 陈恒承
 subtitle: ""
-description: ""
-keywords:
+description: 生活，思考，读书
+keywords: 生活，思考，读书
 author: chen heng cheng
-timezone: ""
+timezone: Asia/Shanghai
 theme: fluid # 指定主题
 layout: about
 
 language: zh-CN # 指定语言，会影响主题显示的语言，按需修改
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://github.com/zhuiye/blog
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -158,3 +158,11 @@ code:
     prismjs:
       style: "default"
       preprocess: true
+
+post:
+  comments:
+    enable: true
+    type: disqus
+
+disqus:
+  shortname: fluid
