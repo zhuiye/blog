@@ -4,9 +4,6 @@ date: 2023-05-10 17:00:46
 tags: tool
 ---
 
-`.zshrc` ：This sets the environment for interactive shells
-`.zprofile` (终端的配置文件)[https://apple.stackexchange.com/questions/388622/zsh-zprofile-zshrc-zlogin-what-goes-where]
-
 ## 前言
 
 一个外观美的终端，会让人开发效率提升，mac 原声自带的终端太丑了，
@@ -33,6 +30,9 @@ execute rc: source ~./zshrc;
 
 先把库克隆下来，然后把库下的主题文件夹，移动到我们用户目录下的 .oh-my-zsh/themes/passion.zsh-theme
 然后打下.zshrc 文件，设置对应的主题名字即可。其他主题的使用也是差不多。
+
+`.zshrc` ：This sets the environment for interactive shells
+`.zprofile` (终端的配置文件)[https://apple.stackexchange.com/questions/388622/zsh-zprofile-zshrc-zlogin-what-goes-where]
 
 
 ```
@@ -62,3 +62,25 @@ plugins=(
 然后就完成了。插件的功能还是比较强大的，下次有机会再多探索几个好用的插件...
 
 插件大部分的安装都不太相同，我们需要一个工具进行管理，那就是 (antigen)[https://github.com/zsh-users/antigen]
+
+## Item2 Auto Login
+
+### 第一种方案
+
+<img src="../../images/item2/1.png">
+<img src="../../images/item2/2.png">
+<img src="../../images/item2/3.png">
+
+触发器规则
+
+`Are you sure you want to continue connecting (yes/no)?`
+
+`yes\r`
+
+`root@47.106.129.157's (p|P)ass(word|wd):`
+
+`你的密码\r`
+
+⚠️：`\r` 为回车，相当于按下了确定键
+
+- https://icloudnative.io/posts/iterm2-auto-login/
