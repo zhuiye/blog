@@ -1,3 +1,9 @@
+---
+title: 二叉树中所有距离为 K 的结点.md
+date: 2022-01-11 17:00:46
+tags: 数据算法与结构
+---
+
 # [二叉树中所有距离为 K 的结点](https://leetcode-cn.com/problems/all-nodes-distance-k-in-binary-tree/)
 
 给定一个二叉树（具有根结点  root），  一个目标结点  target ，和一个整数值 K 。
