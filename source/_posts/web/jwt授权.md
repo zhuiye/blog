@@ -1,4 +1,8 @@
-# jwt 授权
+---
+title: jwt 授权
+date: 2023-11-5 16:00:46
+tags: web
+---
 
 jwt: json-web-token,是一种跨域授权的一种方式，不需要保存会话信息，授权过期，只能等待 token 失效
 
