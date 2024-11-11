@@ -4,6 +4,8 @@ date: 2024-11-11 16:00:46
 tags: web
 ---
 
+PWA,让你的网站拥有原生般的体验。
+
 ## html 的 meta 基本配置
 
 ```html
@@ -54,3 +56,20 @@ if (isInStandaloneMode()) {
 ```
 
 - https://stackoverflow.com/questions/41742390/javascript-to-check-if-pwa-or-mobile-web
+
+## hexo+fluid 中的配置
+
+\_config.fluid.yml 文件中
+
+```yml
+custom_head: '
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- 透明的状态栏-->
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <link rel="manifest" href="/manifest.json">
+'
+```
