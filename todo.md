@@ -12,3 +12,14 @@ box-shadow 20px 0 0 #ffbf2b, 40px 0 0 #24cc3d
 配置看板娘
 
 - https://oml2d.com/guide/hexo.html
+
+## 文章页面
+
+index_img: /img/example.jpg
+
+##
+
+```yaml
+post:
+  default_index_img: /img/example.jpg
+```
