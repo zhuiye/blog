@@ -6,7 +6,7 @@ tags: tool
 
 ## 前言
 
-一个外观美的终端，会让人开发效率提升，mac 原声自带的终端太丑了，
+一个外观美的终端，会让人开发效率提升，mac 原生自带的终端太丑了，
 所有就有了 iterm2
 
 > iTerm2 is a replacement for Terminal and the successor to iTerm. It works on Macs with macOS 10.14 or newer. iTerm2 brings the terminal into the modern age with features you never knew you always wanted.
