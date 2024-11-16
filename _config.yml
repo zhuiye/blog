@@ -120,6 +120,7 @@ OhMyLive2d:
   CDN: https://registry.npmmirror.com/oh-my-live2d/latest/files
   # CDN: https://registry.npmmirror.com/oh-my-live2d/0.13/files/dist/index.min.js
   option:
+    dockedPosition: "right"
     # importType: 'cubism2' #  导入类型, 默认使用全量导入: complete , 可选值: complete, cubism2, cubism5
     libraryUrls: # 自定义 Cubism SDK 外部资源地址
       complete: https://registry.npmmirror.com/oh-my-live2d/latest/files/lib/complete.js
