@@ -262,7 +262,7 @@ about: # 关于页需要手动创建，具体请见：https://hexo.fluid-dev.com
     - { class: "iconfont rss icon-rss", link: "/atom.xml", tip: "rss" }
     - {
         class: "iconfont icon-envelope icon-mail",
-        link: "503181017@qq.com",
+        link: "mailto:503181017@qq.com",
         tip: "email",
       }
     # - {
