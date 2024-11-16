@@ -13,6 +13,8 @@ box-shadow 20px 0 0 #ffbf2b, 40px 0 0 #24cc3d
 
 - https://oml2d.com/guide/hexo.html
 
+models/kobayaxi/model.json
+
 ## 文章页面
 
 index_img: /img/example.jpg
