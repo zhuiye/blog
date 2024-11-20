@@ -18,6 +18,7 @@ layout: about
 ## reading
 
 - 《人生的智慧》
+- 《乌合之众》
 - 《被讨厌的勇气》
 - 《亲密关系》
 - 《1984》
@@ -52,6 +53,7 @@ layout: about
 - 《历史深处的民国》
 - 《中央帝国的财政密码》
 - 《计算机程序的构造与解释 javascript》
+- 《千里命稿》
 - [《逻辑学的简短入门》](https://wxflogic.gitbook.io/logic)
 
 ## manga
