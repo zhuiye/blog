@@ -21,3 +21,5 @@ useEffect(() => {
   console.log(test);
 }, [test]);
 ```
+
+- [React Compiler 忘记记忆化?](https://www.developerway.com/posts/react-compiler-soon)
