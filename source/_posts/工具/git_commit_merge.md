@@ -40,7 +40,7 @@ d, drop = remove commit
 
 一般而言用，除第一条指令外，剩下的由"pick"改为 "squash" 就可以了。
 
-:wq 保存离开,
+`:wq` 保存离开,
 
 3. 进入注释编辑界面
 
