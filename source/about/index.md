@@ -66,6 +66,7 @@ layout: about
 - 《崇祯:勤政的亡国君》
 - 《美丽的新世界》
 - 《论人类不平等的起源和基础》
+- 《蛇棺葬》
 - [《逻辑学的简短入门》](https://wxflogic.gitbook.io/logic)
 
 ## manga

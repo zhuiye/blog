@@ -1,5 +1,5 @@
 ---
-title: git
+title: git commit 多条记录合并
 date: 2024-11-25 17:00:46
 tags: tool
 ---
