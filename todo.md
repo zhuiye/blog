@@ -1,6 +1,5 @@
 # 改造 代码显示区域
 
-wod
 figure:before
 content ""
 display inline-block
