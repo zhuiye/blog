@@ -27,13 +27,21 @@ git commit --amend 往上一次 commit 补漏缺的文件
 
 git reset HEAD 文件名 （从暂存区取消）
 
-快速合并
+Git 项目要求一个更详细的解释，包括做改动的动机和它的实现与之前行为的对比——这是一个值得遵循的好规则。
 
 ## merge 与 rebase 区别，
 
-merge : 在合并的所在分支会有一个新合并记录
+merge : 在不是快速合并情况下，所在分支会有一个新合并记录
+
+如果 能够 fast-forward 合并，那么产生结果跟 rebase 是一样的，不会有多余的 commit。
 
 rebase : 在当前合并的分支不会有合并记录，把需要合并的分支的 commit 往当前的分支 "重放一次"即重新添加，保持一个线性的 git 历史
+
+## 工作流
+
+- 集中式工作流，也就是现在所用的
+
+- 集成管理者工作流 这是 GitHub 和 GitLab 等集线器式（hub-based）工具最常用的工作流
 
 ## 我们的代码放在哪里
 
@@ -321,3 +329,7 @@ git 与其他 vcs 不同，不是增量存储，而是快照引用
 总结遇到的 git 问题列表,并给出解决方案
 
 - https://github.com/k88hudson/git-flight-rules
+
+(git 官方文档)[https://git-scm.com/book/zh/v2/%e8%b5%b7%e6%ad%a5-%e5%85%b3%e4%ba%8e%e7%89%88%e6%9c%ac%e6%8e%a7%e5%88%b6]
+
+## 感想与实际工作中的使用
