@@ -333,3 +333,12 @@ git 与其他 vcs 不同，不是增量存储，而是快照引用
 (git 官方文档)[https://git-scm.com/book/zh/v2/%e8%b5%b7%e6%ad%a5-%e5%85%b3%e4%ba%8e%e7%89%88%e6%9c%ac%e6%8e%a7%e5%88%b6]
 
 ## 感想与实际工作中的使用
+
+- 生成 ssh 的公钥
+- 设置全局 git 信息，如设置推送人相关信息,https 每次保存凭证 `git config --global credential.helper osxkeychain`
+- 正常的拉取远程代码
+  ` git remote add [alias] url`
+
+一般的工作流
+
+- 主分支,dev 分支, dev 经过测试，然后合并 master
