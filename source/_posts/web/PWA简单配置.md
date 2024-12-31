@@ -73,3 +73,5 @@ custom_head: '
     <link rel="manifest" href="/manifest.json">
 '
 ```
+
+- https://segmentfault.com/a/1190000041729491#item-3-10
