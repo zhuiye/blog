@@ -283,6 +283,11 @@ tag:
   banner_mask_alpha: 1 # 头图黑色蒙版的透明度，available: 0 - 1.0， 0 是完全透明（无蒙版），1 是完全不透明
   subtitle: "承认自己的无知，是开启智慧的大门。" # 打字机内容
 
+font:  # 主题字体配置
+  # font_size: 16px        # 全局字号
+  font_family: "LXGW WenKai Screen"          # 全局字体族
+  # code_font_size: 85%    # 代码的字号
+
 custom_head: '
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <!-- 透明的状态栏-->
@@ -292,5 +297,8 @@ custom_head: '
 />
 <meta name="apple-touch-fullscreen" content="yes" />
 <link rel="manifest" href="/manifest.json">
+<link href="
+https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-web@1.501.0/style.min.css
+" rel="stylesheet">
 
 '
