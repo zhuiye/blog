@@ -58,13 +58,13 @@ d, drop = remove commit
 2. vscode code 命令的安装
    `win+shift+p`->shell command install code command in path
 
-![alt text](../../images/git2.png)
+![alt text](../../images/git/git2.png)
 
 使用
 
 `git rebase i master`
 
-![alt text](../../images/git1.png)
+![alt text](../../images/git/git1.png)
 
 参考文章视频
 
