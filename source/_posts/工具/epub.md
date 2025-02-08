@@ -1,6 +1,6 @@
 ---
 title: epub 电子书制作
-date: 2025-02-5 13:00:46
+date: 2025-2-5 13:00:46
 tags: tool
 ---
 
@@ -73,6 +73,10 @@ b::before {
   content: "⚠️ ";
 }
 ```
+
+[《通往奴役之路》](https://z-lib.gs/s/?content_type=book&q=%E9%80%9A%E5%BE%80%E5%A5%B4%E5%BD%B9%E4%B9%8B%E8%B7%AF+%E6%AE%B7%E6%B5%B7%E5%85%89)
+
+弄完才发现,z-lib 上一大堆 ...
 
 ## 教程
 
