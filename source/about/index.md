@@ -89,6 +89,7 @@ layout: about
 - 《和这个世界讲讲道理》
 - 《反洗脑：自愿为奴的真相》
 - [《逻辑学的简短入门》](https://wxflogic.gitbook.io/logic)
+- [CSSAPP](https://hansimov.gitbook.io/csapp)
 
 ## manga
 

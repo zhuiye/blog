@@ -49,6 +49,7 @@ tags: dev env
 - [ShadowsocksX-NG-R](https://github.com/qinyuhang/ShadowsocksX-NG-R/releases/tag/1.4.4-r8-resigning)
 - Disk Space Analyze
 - Color Picker
+- Cakebrew (homebrew) 界面管理器
 
 ## Code Playgrounds
 

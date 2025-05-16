@@ -32,3 +32,8 @@ https://dailydictation.com/?gclid=CjwKCAiAv9ucBhBXEiwA6N8nYHJwY7oBTRlXpYAWFgEFkF
 ## 英语困境
 
 - 一直输入，没输出
+
+## 电影
+
+- [射手网](https://assrt.net/xml/list/sub/subdown24.xml)
+- [动漫花园](https://anime.b168.net/)
