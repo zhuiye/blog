@@ -18,6 +18,8 @@ tags: dev env
 - iOS 包管理器 cocopods 的安装
 - [docsify-cli](https://docsify.js.org/#/zh-cn/quickstart) 静态文档生成器 cli
 
+- [charles](https://www.zzzmode.com/mytools/charles/) web debugger proxy
+
 ## vscode 插件推荐
 
 - One Dark Pro （漂亮主题）
