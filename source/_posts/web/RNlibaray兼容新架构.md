@@ -300,7 +300,7 @@ public class JPushPackage extends TurboReactPackage {
 }
 ```
 
-### step-3. 新架构 newarch 目录下的 JPushModule.java
+### 3-4. 新架构 newarch 目录下的 JPushModule.java
 
 继承实现 NativeJpushSpec 类中的方法,实例化 JPushModuleImpl 类 作为代理，调用真正的实现。
 
@@ -505,7 +505,7 @@ public class JPushModule extends ReactContextBaseJavaModule {
 
 iOS 的改造比 android 更废时间，因为 OC 的语法 真的把我看吐了。。。
 
-## Step 4-1 JPushRN.podspec 文件的改造
+### 4-1 JPushRN.podspec 文件的改造
 
 ```diff
   require 'json'
@@ -568,7 +568,7 @@ end
 
 vendored_frameworks: 依赖的 一些编译包。一般是`*.xcframework`格式 ，兼容模拟器- arm64 架构
 
-### step 4-1 RCTJPushModule.h 文件改造
+### step 4-2 RCTJPushModule.h 文件改造
 
 ```diff
 +   #ifdef RCT_NEW_ARCH_ENABLED
@@ -585,7 +585,7 @@ vendored_frameworks: 依赖的 一些编译包。一般是`*.xcframework`格式 
 + @end
 ```
 
-### step-4-2 RCTJPushModule.m 文件 改为 RCTJPushModule.mm
+### step-4-3 RCTJPushModule.m 文件 改为 RCTJPushModule.mm
 
 ```diff
 
@@ -615,7 +615,7 @@ vendored_frameworks: 依赖的 一些编译包。一般是`*.xcframework`格式 
     @synthesize bridge;
 ```
 
-### 兼容感想
+## 兼容感想
 
 兼容过程也不是一帆风顺，下面可以列举一下踩的坑
 
