@@ -7,7 +7,7 @@ tags: web
 ## 前情提要
 
 RN 现在的版本已经到了 0.80(2025-6-28),新架构已经是默认开启的了，官方也在制定逐步取消对旧架构的维护支持，在未来的版本中会移除旧架构，所以对于旧架构原先的
-第三方库也要做对应的兼容处理。目前大部分流行热门的第三方库都已经得到了适配，但是一些冷门的，还是停留在旧的版本，或者以前的一些私有封装的 sdk 还停留在旧版本，所以很有必要研究一下如何适配。故此，选择了 极光推送的 [jpush-react-native](https://github.com/jpush/jpush-react-native)作为练手。适配一个库是比较简单的，至少比从来开始写的工作量要少，我们只需要按照一定的格式规范 在旧架构的基础在做一些 “链接粘合”的工作即可。
+第三方库也要做对应的兼容处理。目前大部分流行热门的第三方库都已经得到了适配，但是一些冷门的，还是停留在旧的版本，或者以前的一些私有封装的 sdk 还停留在旧版本，所以很有必要研究一下如何适配。故此，选择了 极光推送的 [jpush-react-native](https://github.com/jpush/jpush-react-native)作为练手。适配一个库是比较简单的，至少比从来开始写的工作量要少，我们只需要按照一定的格式规范 在旧架构的基础在做一些 “链接粘合”的工作即可。（⚠️ 这需要无比的细心）
 
 ## Step - 1 为 package.json 添加 codegenConfig
 
@@ -28,23 +28,10 @@ RN 现在的版本已经到了 0.80(2025-6-28),新架构已经是默认开启的
 }
 ```
 
-codegen : 为你的 Turbo Native Module 生成链接 到 RN 链接模版代码的一个工作。
+`codegen` : 为你的 Turbo Native Module 生成链接 到 RN 链接模版代码的一个工作。
 
-"name": "RNJPushSpec", 这个生成模版代码的文件名字，这个在 iOS 中用到
-
-```c++
-#ifdef RCT_NEW_ARCH_ENABLED
-
-#import <RNJPushSpec/RNJPushSpec.h>
-  @interface RCTJPushModule: NSObject <NativeJpushSpec>
-
-
-#else
-  @interface RCTJPushModule : RCTEventEmitter <RCTBridgeModule>
-
-@end
-
-```
+`"name": "RNJPushSpec"`, 生成模版代码的文件名字。在 `iOS` 中 叫 RNJPushSpec，在 `Android`中叫
+NativeJpushSpec(specs 目录下的 spec 文件+Spec )。这个都在后续中用到，都要继承实现生成模版代码中的方法
 
 ## Step -2 编写 specs 规范文件
 
@@ -129,6 +116,8 @@ public abstract class NativeJpushSpec extends ReactContextBaseJavaModule impleme
 改造后的目录结构如下
 ![alt text](../../images/jiguang/director.png)
 
+⚠️：创建的 newarch/oldarch 目录 要和 main 同层，要不然找不到相关的类
+
 ### 3-1 grade.build 文件的改造
 
 **主要是 根据是否判断新旧架构，引入相关的依赖和，添加选择对应的 源 java 目录**
@@ -160,6 +149,7 @@ android {
         targetSdkVersion safeExtGet('targetSdkVersion', 34)
         versionCode 1
         versionName "1.0"
++ // 这里不要忘了加，在JPushPackage 中读取是否为新旧架构
 +        buildConfigField("boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString())
     }
 
@@ -312,7 +302,7 @@ public class JPushPackage extends TurboReactPackage {
 
 ### step-3. 新架构 newarch 目录下的 JPushModule.java
 
-继承实现 NativeJpushSpec 类中的方法,实例化 JPushModuleImpl 类 作为代理，调用真正的实现方式
+继承实现 NativeJpushSpec 类中的方法,实例化 JPushModuleImpl 类 作为代理，调用真正的实现。
 
 ```java
 package cn.jiguang.plugins.push;
@@ -513,7 +503,9 @@ public class JPushModule extends ReactContextBaseJavaModule {
 
 ## Step 4 iOS 改造
 
-## Step 4-1 JPushRN.podspec 文件的改造 cocoapods 的依赖配置文件
+iOS 的改造比 android 更废时间，因为 OC 的语法 真的把我看吐了。。。
+
+## Step 4-1 JPushRN.podspec 文件的改造
 
 ```diff
   require 'json'
@@ -534,7 +526,7 @@ Pod::Spec.new do |s|
   s.platforms       = { :ios => "11.0" }
   s.frameworks      = 'UIKit','CFNetwork','CoreFoundation','CoreTelephony','SystemConfiguration','CoreGraphics','Foundation','Security'
   s.source          = { :git => "https://github.com/jpush/jpush-react-native.git", :tag => "#{s.version}" }
-  s.source_files    = "ios/**/*.{h,m,mm,swift}"
++  s.source_files    = "ios/**/*.{h,m,mm,swift}"
   s.preserve_paths  = "*.js"
   s.weak_frameworks = 'UserNotifications'
   s.libraries       = 'z','resolv'
@@ -568,6 +560,14 @@ Pod::Spec.new do |s|
 end
 ```
 
+这个文件相当于 pod 类型的包配置，你就把当成一个 npm 包的 package.json。里面是包名，版本，以及一些依赖。
+
+在这里也遇到了一些坑 source_files 的设置 要加入 `.mm`,`.swift`的后缀，
+
+否则 `pod install` 安装的时候，就会忽略这些文件
+
+vendored_frameworks: 依赖的 一些编译包。一般是`*.xcframework`格式 ，兼容模拟器- arm64 架构
+
 ### step 4-1 RCTJPushModule.h 文件改造
 
 ```diff
@@ -589,12 +589,12 @@ end
 
 ```diff
 
-+  #if RCT_NEW_ARCH_ENABLED
++ #ifdef RCT_NEW_ARCH_ENABLED
 + #import <RNJPushSpec/RNJPushSpec.h>
 + #endif
 
 + # pragma mark - New Architecture
-+ #if RCT_NEW_ARCH_ENABLED
++ #ifdef RCT_NEW_ARCH_ENABLED
 + - (std::shared_ptr<facebook::react::TurboModule>)getTurboModule:
 +    (const facebook::react::ObjCTurboModule::InitParams &)params
 + {
@@ -605,7 +605,26 @@ end
 
 ```
 
+1. 新架构下，类型的检查更加严格，像以前那种 ,id 默认类型赋予特定的类型，xcode 是可以通过的，现在必须要在代码中强制转换
+2. `self.bridge`需要声明明确引入,否则报错
+
+```mm
+    @interface RCTJPushModule ()
+    @end
+    @implementation RCTJPushModule
+    @synthesize bridge;
+```
+
 ### 兼容感想
+
+兼容过程也不是一帆风顺，下面可以列举一下踩的坑
+
+- 忘记引入包名。
+- 复制粘贴忘记修改对应名字 （粗心）
+- spec 文件定义的方法，在 ios 和 android 端都要暴露实现出来，或者空实现
+- spec 定义的方法参数类型 ，在原生端实现要一致
+
+- 最好有一个兼容新旧架构的库做参考对照
 
 对 原生的各种报错一脸懵逼，但好在有 ai 的答疑，也解决了不少的问题，这次对新架构更多了一些了解。
 
