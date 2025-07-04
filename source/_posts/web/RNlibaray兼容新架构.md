@@ -7,7 +7,7 @@ tags: web
 ## 前情提要
 
 RN 现在的版本已经到了 0.80(2025-6-28),新架构已经是默认开启的了，官方也在制定逐步取消对旧架构的维护支持，在未来的版本中会移除旧架构，所以对于旧架构原先的
-第三方库也要做对应的兼容处理。目前大部分流行热门的第三方库都已经得到了适配，但是一些冷门的，还是停留在旧的版本，或者以前的一些私有封装的 sdk 还停留在旧版本，所以很有必要研究一下如何适配。故此，选择了 极光推送的 [jpush-react-native](https://github.com/jpush/jpush-react-native)作为练手。适配一个库是比较简单的，至少比从来开始写的工作量要少，我们只需要按照一定的格式规范 在旧架构的基础在做一些 “链接粘合”的工作即可。（⚠️ 这需要无比的细心）
+第三方库也要做对应的兼容处理。目前大部分流行热门的第三方库都已经得到了适配，但是一些冷门的，还是停留在旧的版本，或者以前的一些私有封装的 sdk 还停留在旧版本，所以很有必要研究一下如何适配。故此，选择了 极光推送的 [jpush-react-native](https://github.com/jpush/jpush-react-native)作为练手。适配一个库是比较简单的，至少比从头开始写的工作量要少，我们只需要按照一定的格式规范 在旧架构的基础在做一些 “链接粘合”的工作即可。（⚠️ 这需要无比的细心）
 
 ## Step - 1 为 package.json 添加 codegenConfig
 
@@ -375,7 +375,7 @@ public class JPushModule extends NativeJpushSpec {
 }
 ```
 
-### step-4 旧架构 oldarch 下的 JPushModule.java
+### 3-5 旧架构 oldarch 下的 JPushModule.java
 
 此文件为 原旧架构的 JPushModule，不同的是，实例化了 JPushModuleImpl 作为了代理实现各个方法
 
@@ -632,7 +632,3 @@ vendored_frameworks: 依赖的 一些编译包。一般是`*.xcframework`格式 
 
 - [Turbo Native Module](https://reactnative.dev/docs/turbo-native-modules-introduction)
 - [向后兼容代码库](https://github.com/react-native-community/RNNewArchitectureLibraries.git)
-
-```
-
-```
