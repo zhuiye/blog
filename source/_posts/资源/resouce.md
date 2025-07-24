@@ -37,3 +37,7 @@ https://dailydictation.com/?gclid=CjwKCAiAv9ucBhBXEiwA6N8nYHJwY7oBTRlXpYAWFgEFkF
 
 - [射手网](https://assrt.net/xml/list/sub/subdown24.xml)
 - [动漫花园](https://anime.b168.net/)
+
+## OC
+  - https://objc-zen-book.books.yourtion.com/Chapter10/02-exploit-code-block.html
+  - http://www.bczl.xyz/objc/doc-zh/1.Introduction.html
