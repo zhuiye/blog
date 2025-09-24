@@ -90,6 +90,10 @@ layout: about
 - 《反洗脑：自愿为奴的真相》
 - [《逻辑学的简短入门》](https://wxflogic.gitbook.io/logic)
 - [CSSAPP](https://hansimov.gitbook.io/csapp)
+- 《性趣密探》
+- 《宫女往谈录》
+- 《皇权与绅权》
+- 《王府生活实录》
 
 ## manga
 
