@@ -53,6 +53,8 @@ tags: dev env
 - Color Picker
 - Cakebrew (homebrew) 界面管理器
 
+- [Mode](https://github.com/tw93/Mole)
+
 ## Code Playgrounds
 
 - [codepen](https://codepen.io/)
